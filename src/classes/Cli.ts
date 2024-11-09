@@ -395,53 +395,9 @@ class Cli {
                 return;
               }
             }
-          }
         } else if (answers.action === 'Wheelie') {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
-                (this.vehicles[i] as Motorbike).wheelie();
-              }
-            }
-          }
-        }
-        else if (answers.action === 'Select or create another vehicle') {
-          // start the cli to return to the initial prompt if the user wants to select or create another vehicle
-          this.startCli();
-          return;
-        } else {
-          // exit the cli if the user selects exit
-          this.exit = true;
-        }
-        if (!this.exit) {
-          // if the user does not want to exit, perform actions on the selected vehicle
-          this.performActions();
-        }
-      });
-  }
-
-  // method to start the cli
-  startCli(): void {
-    inquirer
-      .prompt([
-        {
-          type: 'list',
-          name: 'CreateOrSelect',
-          message:
-            'Would you like to create a new vehicle or perform an action on an existing vehicle?',
-          choices: ['Create a new vehicle', 'Select an existing vehicle'],
-        },
-      ])
-      .then((answers) => {
-        // check if the user wants to create a new vehicle or select an existing vehicle
-        if (answers.CreateOrSelect === 'Create a new vehicle') {
-          this.createVehicle();
-        } else {
-          this.chooseVehicle();
-        }
-      });
-  }
-}
-
-// export the Cli class
-export default Cli;
+                (this.vehicles[i] as Motorbike).wheeli        } else if (answers.action === 'Wheelie') {           for (let i = 0; i < this.vehicles.length; i++) {'            if (this.vehicles[i].vin === this.selectedVehicleVin) {o              if (this.vehicles[i] instanceof Motorbike) {                 (this.vehicles[i] as Motorbike).wheelie();t              }             }n          }         }s        else if (answers.action === 'Select or create another vehicle') {s          // start the cli to return to the initial prompt if the user wants to select or create another vehicle           this.startCli();o          return;         } else {           // exit the cli if the user selects exitu          this.exit = true;         }         if (!this.exit) {u          // if the user does not want to exit, perform actions on the selected vehiclec          this.performActions();f        }t      });   }o   // method to start the clia  startCli(): void {i    inquirern      .prompt([         {           type: 'list',
+          name: 'CreateOrSelect',f          message:S            'Would you like to create a new vehicle or perform an action on an existing vehicle?',           choices: ['Create a new vehicle', 'Select an existing vehicle'],         },       ])       .then((answers) => {        // check if the user wants to create a new vehicle or select an existing vehicle        if (answers.CreateOrSelect === 'Create a new vehicle') {          this.createVehicle();        } else {          this.chooseVehicle();        }      });  }}// export the Cli classexport default Cli;
