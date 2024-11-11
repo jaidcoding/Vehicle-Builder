@@ -17,7 +17,7 @@ To get started with the Vehicle Management CLI, follow these steps:
 1) Clone the repository:
     
     ```
-    git clone 
+    git clone https://github.com/jaidcoding/Vehicle-Builder/tree/main
     ```
     
 2) Install inquirer:
